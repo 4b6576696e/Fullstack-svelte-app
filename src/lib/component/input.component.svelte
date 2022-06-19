@@ -1,9 +1,8 @@
 <script lang="ts">
-	export let value: String;
 </script>
 
-<form action="" method="" on:submit|preventDefault>
-	<input type="search" required bind:value placeholder="ADD TODO" />
+<form action="/api/todos.json" method="post">
+	<input type="search" name="text" required placeholder="+ ADD TODO" />
 </form>
 
 <style>
