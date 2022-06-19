@@ -1,12 +1,19 @@
+<script context="module">
+	export async function load({ fetch }) {
+		const res = await fetch('/api/todos.json');
+		const data = await res.json();
+		console.log(data);
+
+		return { props: { data } };
+	}
+</script>
+
 <script lang="ts">
 	import '../app.css';
 	import TaskList from '../lib/component/taskList.component.svelte';
 	import Input from '../lib/component/input.component.svelte';
 
-	let data = [];
-	let value = '';
-
-	const submitHandler = (e: SubmitEvent) => {};
+	export let data: TODO[];
 </script>
 
 <svelte:head>
@@ -14,8 +21,8 @@
 </svelte:head>
 
 <div class="todo">
-	<Input bind:value on:submit={submitHandler} />
-	<TaskList />
+	<Input />
+	<TaskList todo={data} />
 </div>
 
 <style>
