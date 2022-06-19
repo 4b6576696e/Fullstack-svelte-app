@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<form action="/api/todos.json" method="post">
+<form action="/todos.json" method="post">
 	<input type="search" name="text" required placeholder="+ ADD TODO" />
 </form>
 

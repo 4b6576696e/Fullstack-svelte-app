@@ -5,8 +5,8 @@
 </script>
 
 <div class="task-list">
-	{#each todo as { text, done }}
-		<Task {text} {done} />
+	{#each todo as { text, done, uid }}
+		<Task {text} {done} {uid} />
 	{:else}
 		<div class="fallback">
 			{'<-- TODO list is empty -->'}
