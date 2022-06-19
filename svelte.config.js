@@ -8,7 +8,10 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter({ out: 'my-output-directory' })
+		adapter: adapter({ out: 'my-output-directory' }),
+		methodOverride: {
+			allowed: ['PUT', 'PATCH', 'DELETE']
+		}
 	}
 };
 

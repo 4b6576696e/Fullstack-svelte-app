@@ -1,11 +1,12 @@
-<script context="module">
-	export async function load({ fetch }) {
-		const res = await fetch('/api/todos.json');
+<script context="module" lang="ts">
+	import type { Load } from '@sveltejs/kit';
+
+	export const load: Load = async function ({ fetch }) {
+		const res = await fetch('/todos.json');
 		const data = await res.json();
-		console.log(data);
 
 		return { props: { data } };
-	}
+	};
 </script>
 
 <script lang="ts">

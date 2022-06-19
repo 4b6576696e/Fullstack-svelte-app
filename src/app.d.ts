@@ -10,7 +10,7 @@ declare namespace App {
 }
 
 type TODO = {
-    created_at: Date,
+    uid: string,
     text: FormDataEntryValue | null,
     done: boolean,
 }
